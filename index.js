@@ -40,7 +40,7 @@ app.get("/token", async (req, res) => {
 });
 // Add this to index.js (if you want login via browser to generate a token)
 app.get("/login", (req, res) => {
-  const redirect_uri = "https://your-vercel-app-name.vercel.app/callback";
+  const redirect_uri = "https://spotify-api-token.vercel.app/callback";
   const scope = "user-read-playback-state user-modify-playback-state";
 
   const authUrl =
@@ -55,7 +55,7 @@ app.get("/login", (req, res) => {
 
 app.get("/callback", async (req, res) => {
   const code = req.query.code || null;
-  const redirect_uri = "https://your-vercel-app-name.vercel.app/callback";
+  const redirect_uri = "https://spotify-api-token.vercel.app/callback";
 
   try {
     const authBuffer = Buffer.from(`${clientId}:${clientSecret}`).toString(
